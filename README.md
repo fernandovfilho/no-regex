@@ -1,6 +1,6 @@
 # NO Regex Utils
 
-> A lot of regex functions so you don't have to worry about it
+> Some regex functions so you don't have to worry about it
 
 ## Install
 
