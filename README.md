@@ -9,7 +9,7 @@
 ## How to use
 
 ```javascript
-import { isEmail } from "no-regex-utils";
+import NoRegex from "no-regex-utils";
 ```
 
 ## Methods
@@ -19,7 +19,21 @@ import { isEmail } from "no-regex-utils";
 > isEmail
 
 ```javascript
-isEmail("fernando@email.com"); // true
+NoRegex.isEmail("fernando@email.com"); // true
+```
+
+> isIPv4
+
+```javascript
+NoRegex.isIPv4("192.168.0.1"); // true
+```
+
+### Manipulations
+
+> onlyNumbers
+
+```javascript
+NoRegex.onlyNumbers("test123test"); // 123
 ```
 
 ## Author
