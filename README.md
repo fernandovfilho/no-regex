@@ -1,15 +1,15 @@
-# NO Regex
+# NO Regex Utils
 
 > A lot of regex functions so you don't have to worry about it
 
 ## Install
 
-`npm install no-regex`
+`npm install no-regex-utils`
 
 ## How to use
 
 ```javascript
-import { isEmail } from "no-regex";
+import { isEmail } from "no-regex-utils";
 ```
 
 ## Methods
