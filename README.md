@@ -28,6 +28,18 @@ NoRegex.isEmail("fernando@email.com"); // true
 NoRegex.isIPv4("192.168.0.1"); // true
 ```
 
+> isUsername
+
+```javascript
+NoRegex.isUsername({
+  value: "user_test", // required
+  minLength: 3, // optional, default: 3
+  maxLength: 16, // optional, default: 16
+  underline: true, // optional, default: true
+  dash: true, // optional, default: true
+});
+```
+
 ### Manipulations
 
 > onlyNumbers

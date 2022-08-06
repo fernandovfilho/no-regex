@@ -7,3 +7,22 @@ export const isIPv4 = (value: string): boolean => {
     "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
   ).test(value);
 };
+
+export const isUsername = ({
+  value,
+  minLength = 3,
+  maxLength = 16,
+  underline = true,
+  dash = true,
+}: {
+  value: string;
+  minLength?: number;
+  maxLength?: number;
+  underline?: boolean;
+  dash?: boolean;
+}): boolean => {
+  let regex = `^[a-z0-9${underline ? "_" : ""}${
+    dash ? "-" : ""
+  }]{${minLength},${maxLength}}$`;
+  return new RegExp(regex).test(value);
+};
