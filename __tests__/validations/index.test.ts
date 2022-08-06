@@ -1,13 +1,31 @@
-import { isEmail } from "../../src";
+import { isEmail, isIPv4 } from "../../src";
 
 describe("testing validations functions", () => {
   const isEmailCases = [
     ["fernando@email.com", true],
     ["fernando.vargas@email.com", true],
-    ["fernando", false],
+    ["test", false],
+    ["", false],
   ];
 
-  test.each(isEmailCases)("given %p, should return %p", (email, expected) => {
-    expect(isEmail(email as string)).toBe(expected);
-  });
+  const isIPv4Cases = [
+    ["192.168.0.1", true],
+    ["9.255.255.255", true],
+    ["test", false],
+    ["", false],
+  ];
+
+  test.each(isEmailCases)(
+    "isEmail > given %p, should return %p",
+    (value, expected) => {
+      expect(isEmail(value as string)).toBe(expected);
+    }
+  );
+
+  test.each(isIPv4Cases)(
+    "isIPv4 > given %p, should return %p",
+    (value, expected) => {
+      expect(isIPv4(value as string)).toBe(expected);
+    }
+  );
 });
