@@ -8,19 +8,22 @@ export const isIPv4 = (value: string): boolean => {
   ).test(value);
 };
 
-export const isUsername = ({
-  value,
-  minLength = 3,
-  maxLength = 16,
-  underline = true,
-  dash = true,
-}: {
-  value: string;
+export interface IIsUsernameOptions {
   minLength?: number;
   maxLength?: number;
   underline?: boolean;
   dash?: boolean;
-}): boolean => {
+}
+
+export const isUsername = (
+  value: string,
+  {
+    minLength = 3,
+    maxLength = 16,
+    underline = true,
+    dash = true,
+  }: IIsUsernameOptions
+): boolean => {
   let regex = `^[a-z0-9${underline ? "_" : ""}${
     dash ? "-" : ""
   }]{${minLength},${maxLength}}$`;

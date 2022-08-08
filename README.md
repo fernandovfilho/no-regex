@@ -31,13 +31,14 @@ NoRegex.isIPv4("192.168.0.1"); // true
 > isUsername
 
 ```javascript
-NoRegex.isUsername({
-  value: "user_test", // required
-  minLength: 3, // optional, default: 3
-  maxLength: 16, // optional, default: 16
-  underline: true, // optional, default: true
-  dash: true, // optional, default: true
-});
+NoRegex.isUsername(
+  "user_test"
+  {
+  minLength: int,       // optional, default: 3
+  maxLength: int,       // optional, default: 16
+  underline: boolean,   // optional, default: true
+  dash: boolean,        // optional, default: true
+}) // true;
 ```
 
 ### Manipulations
@@ -46,6 +47,17 @@ NoRegex.isUsername({
 
 ```javascript
 NoRegex.onlyNumbers("test123test"); // 123
+```
+
+> onlyLetters
+
+```javascript
+NoRegex.onlyLetters(
+  "lE123tterS123"
+  {
+  lowercase: boolean, // optional, default: true
+  uppercase: boolean, // optional, default: true
+}) // 'lEtterS';
 ```
 
 ## Author

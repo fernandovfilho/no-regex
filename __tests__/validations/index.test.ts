@@ -1,4 +1,5 @@
 import * as NoRegex from "../../src";
+import { IIsUsernameOptions } from "../../src/validations";
 
 describe("testing validations functions", () => {
   const useCases = [
@@ -20,17 +21,6 @@ describe("testing validations functions", () => {
         ["", false],
       ],
     },
-    {
-      test: "isUsername",
-      cases: [
-        [{ value: "user_test" }, true],
-        [{ value: "user_test-too-long" }, false],
-        [{ value: "user_test", minLength: 10 }, false],
-        [{ value: "user_test-too-long", maxLength: 10 }, false],
-        [{ value: "user-test", dash: false }, false],
-        [{ value: "user_test", underline: false }, false],
-      ],
-    },
   ];
 
   for (const testCase of useCases) {
@@ -41,4 +31,22 @@ describe("testing validations functions", () => {
       }
     );
   }
+
+  const isUsernameCases = [
+    ["user_test", {}, true],
+    ["user_test-too-long", {}, false],
+    ["user_test", { minLength: 10 } as IIsUsernameOptions, false],
+    ["user_test-too-long", { maxLength: 10 } as IIsUsernameOptions, false],
+    ["user-test", { dash: false } as IIsUsernameOptions, false],
+    ["user_test", { underline: false } as IIsUsernameOptions, false],
+  ];
+
+  test.each(isUsernameCases)(
+    `isUsername > given %p and %p, should return %p`,
+    (value, options, expected) => {
+      expect(
+        NoRegex.isUsername(value as string, options as IIsUsernameOptions)
+      ).toBe(expected);
+    }
+  );
 });
