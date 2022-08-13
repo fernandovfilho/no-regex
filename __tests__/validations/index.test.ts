@@ -21,6 +21,18 @@ describe("testing validations functions", () => {
         ["", false],
       ],
     },
+    {
+      test: "isUrl",
+      cases: [
+        ["https://google.com", true],
+        ["ws://test.com", true],
+        ["ftp://test.com", true],
+        ["http://localhost.com/test?test=ok", true],
+        ["error-ftp://test.com", false],
+        ["test", false],
+        ["", false],
+      ],
+    },
   ];
 
   for (const testCase of useCases) {

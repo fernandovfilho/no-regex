@@ -41,6 +41,12 @@ NoRegex.isUsername(
 }) // true;
 ```
 
+> isUrl
+
+```javascript
+NoRegex.isUrl("https://google.com"); // true
+```
+
 ### Manipulations
 
 > onlyNumbers
