@@ -22,6 +22,16 @@ describe("testing validations functions", () => {
       ],
     },
     {
+      test: "isIPv6",
+      cases: [
+        ["test", false],
+        ["", false],
+        ["2001:0db8:85a3:0000:0000:8a2e:0370:7334", true],
+        ["2001:db8:0:0:0:0:0:1", true],
+        ["2001:0db8:0000:0042:0000:8a2e:0370:7334", true],
+      ],
+    },
+    {
       test: "isUrl",
       cases: [
         ["https://google.com", true],

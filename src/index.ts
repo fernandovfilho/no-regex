@@ -1,4 +1,4 @@
 import { onlyLetters, onlyNumbers } from "./manipulations";
-import { isEmail, isIPv4, isUrl, isUsername } from "./validations";
+import { isEmail, isIPv4, isIPv6, isUrl, isUsername } from "./validations";
 
-export { isEmail, isIPv4, isUsername, onlyNumbers, onlyLetters, isUrl };
+export { isEmail, isIPv4, isIPv6, isUrl, isUsername, onlyLetters, onlyNumbers };
