@@ -28,6 +28,12 @@ NoRegex.isEmail("fernando@email.com"); // true
 NoRegex.isIPv4("192.168.0.1"); // true
 ```
 
+> isIPv6
+
+```javascript
+NoRegex.isIPv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334"); // true
+```
+
 > isUsername
 
 ```javascript
