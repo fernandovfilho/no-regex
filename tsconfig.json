@@ -5,8 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "outDir": "./dist",
-    "allowSyntheticDefaultImports": true
+    "outDir": "./dist"
   },
   "include": ["src/**/*"]
 }
