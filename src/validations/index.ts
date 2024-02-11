@@ -13,6 +13,10 @@ export const isIPv4 = (value: string): boolean => {
   );
 };
 
+export const isIPv6 = (value: string): boolean => {
+  return testRegex(/^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/, value);
+};
+
 export const isUrl = (value: string): boolean => {
   return testRegex(
     /^(?:http|https|ftp|mailto|file|data|irc|ws|wss):\/\/[A-Za-z0-9\-]{0,63}(\.[A-Za-z0-9\-]{0,63})+(:\d{1,4})?\/*(\/*[A-Za-z0-9\-._]+\/*)*(\?.*)?(#.*)?/,
